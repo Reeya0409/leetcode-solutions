@@ -1,0 +1,2 @@
+Select ac1.machine_id, Round(AVG(ac2.timestamp - ac1.timestamp),3) as processing_time from Activity ac1 Join Activity ac2 on ac1.process_id =ac2.process_id AND ac1.activity_type = 'start'
+AND ac2.activity_type = 'end' AND ac1.machine_id = ac2.machine_id group by ac1.machine_id;
