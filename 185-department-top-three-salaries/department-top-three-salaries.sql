@@ -1,0 +1,1 @@
+Select d.Name as Department, e.Name as Employee ,e.salary as Salary from Employee e Left Join Department d on e.departmentId=d.id Where (SELECT COUNT(DISTINCT e2.salary) FROM Employee e2 WHERE e2.departmentId = e.departmentId AND e2.salary > e.salary) <3 ;
